@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Submit Problem Statement | Smart Horizon Hackathon 2026</title>
+  <meta name="description" content="Submit your problem statement for Smart Horizon 48-Hour International Hackathon 2026" />
+  <meta name="theme-color" content="#2b2d73" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20241225" />
+  
+  <style>
+    .upload-page {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 2rem 0;
+    }
+    
+    .upload-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .upload-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .upload-header h1 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    
+    .upload-header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .upload-form-container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      border: 1px solid #e9ebf8;
+    }
+    
+    .form-section {
+      margin-bottom: 2rem;
+    }
+    
+    .form-section h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      border-bottom: 2px solid var(--alt);
+      padding-bottom: 0.5rem;
+    }
+    
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    
+    .form-group label {
+      font-weight: 600;
+      color: var(--primary-700);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    
+    .form-group label .required {
+      color: #dc2626;
+      margin-left: 0.25rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem 1rem;
+      border: 2px solid #e1e5e9;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(43, 45, 115, 0.1);
+    }
+    
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .form-group small {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 0.25rem;
+    }
+    
+    .form-group input[type="file"] {
+      padding: 0.5rem;
+      border: 2px dashed #e1e5e9;
+      background: #f8f9fa;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="file"]:hover {
+      border-color: var(--primary);
+      background: #f0f2ff;
+    }
+    
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #e9ebf8;
+    }
+    
+    .btn-back {
+      background: #6c757d;
+      color: white;
+    }
+    
+    .btn-back:hover {
+      background: #5a6268;
+    }
+    
+    .status-message {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      display: none;
+    }
+    
+    .status-message.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status-message.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .status-message.loading {
+      background: #d1ecf1;
+      color: #0c5460;
+      border: 1px solid #bee5eb;
+    }
+    
+    @media (max-width: 768px) {
+      .upload-page {
+        padding: 1rem 0;
+      }
+      
+      .upload-header {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+      }
+      
+      .upload-header h1 {
+        font-size: 2rem;
+      }
+      
+      .upload-form-container {
+        padding: 1.5rem;
+      }
+      
+      .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .form-actions {
+        flex-direction: column;
+      }
+      
+      .form-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-page">
+    <div class="upload-container">
+      <div class="upload-header">
+        <h1>📝 Submit Problem Statement</h1>
+        <p>Submit your innovative problem statement for Smart Horizon 48-Hour International Hackathon 2026. Fill in all the required details below to participate in this premier hackathon event.</p>
+      </div>
+      
+      <div class="upload-form-container">
+        <form id="uploadForm" enctype="multipart/form-data">
+          <div class="form-section">
+            <h3>🏢 Organization Information</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="orgName">Organization Name <span class="required">*</span></label>
+                <input type="text" id="orgName" name="orgName" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="domain">Domain</label>
+                <select id="domain" name="domain">
+                  <option value="">Select Domain</option>
+                  <option value="Agriculture and Rural Development">Agriculture and Rural Development</option>
+                  <option value="Health Tech">Health Tech</option>
+                  <option value="SpaceTech">SpaceTech</option>
+                  <option value="Smart City, Vehicles and Automation">Smart City, Vehicles and Automation</option>
+                  <option value="FinTech">FinTech</option>
+                  <option value="Gen AI for Business Applications">Gen AI for Business Applications</option>
+                  <option value="Cyber Security">Cyber Security</option>
+                  <option value="AI/ML/DL">AI/ML/DL</option>
+                  <option value="Internet of Things (IoT)">Internet of Things (IoT)</option>
+                  <option value="Innovation using Web 3.0">Innovation using Web 3.0</option>
+                </select>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="logo">Organization Logo <span class="required">*</span></label>
+                <input type="file" id="logo" name="logo" accept="image/*" required>
+                <small>Accepted formats: JPG, PNG, GIF (Max size: 5MB)</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h3>👤 Contact Information</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="spocName">SPOC Name <span class="required">*</span></label>
+                <input type="text" id="spocName" name="spocName" required>
+                <small>Single Point of Contact</small>
+              </div>
+              
+              <div class="form-group">
+                <label for="spocContact">SPOC Contact <span class="required">*</span></label>
+                <div style="display: flex; gap: 0.5rem;">
+                  <select id="countryCode" name="countryCode" style="flex: 0 0 120px;" required>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+61">🇦🇺 +61</option>
+                    <option value="+81">🇯🇵 +81</option>
+                    <option value="+49">🇩🇪 +49</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+86">🇨🇳 +86</option>
+                    <option value="+82">🇰🇷 +82</option>
+                    <option value="+65">🇸🇬 +65</option>
+                    <option value="+60">🇲🇾 +60</option>
+                    <option value="+66">🇹🇭 +66</option>
+                    <option value="+84">🇻🇳 +84</option>
+                    <option value="+62">🇮🇩 +62</option>
+                    <option value="+63">🇵🇭 +63</option>
+                    <option value="+94">🇱🇰 +94</option>
+                    <option value="+880">🇧🇩 +880</option>
+                    <option value="+977">🇳🇵 +977</option>
+                    <option value="+971">🇦🇪 +971</option>
+                    <option value="+966">🇸🇦 +966</option>
+                  </select>
+                  <input type="tel" id="spocContact" name="spocContact" style="flex: 1;" pattern="[0-9]{10}" maxlength="10" required placeholder="1234567890">
+                </div>
+                <small>Enter 10-digit mobile number (numbers only)</small>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="contactEmail">Contact Email <span class="required">*</span></label>
+                <input type="email" id="contactEmail" name="contactEmail" required pattern="[a-zA-Z0-9._%+-]+@(gmail\.com|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$">
+                <small>Please use a valid email address (Gmail preferred)</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h3>💡 Problem Statement Details</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="psTitle">Problem Statement Title <span class="required">*</span></label>
+                <input type="text" id="psTitle" name="psTitle" required>
+                <small>A clear and concise title for your problem statement</small>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="psDescription">Problem Statement Description <span class="required">*</span></label>
+                <textarea id="psDescription" name="psDescription" rows="8" required placeholder="Provide a detailed description of the problem statement, including objectives, expected outcomes, and any specific requirements..."></textarea>
+                <small>Minimum 100 characters required</small>
+              </div>
+              
+              <div class="form-group full-width">
+                <label for="datasetLink">Dataset Link (Optional)</label>
+                <input type="url" id="datasetLink" name="datasetLink" placeholder="https://example.com/dataset">
+                <small>Provide a link to relevant datasets if available</small>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-section">
+            <h3>📎 Supporting Documents</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="documents">Supporting Documents (Optional)</label>
+                <input type="file" id="documents" name="documents[]" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.txt">
+                <small>Accepted formats: PDF, DOC, DOCX, PPT, PPTX, TXT (Max 10MB per file)</small>
+              </div>
+            </div>
+          </div>
+          
+          <div id="statusMessage" class="status-message"></div>
+          
+          <div class="form-actions">
+            <a href="index1.html" class="btn btn-back">← Back to Home</a>
+            <button type="submit" class="btn primary">Submit Problem Statement</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Mobile number validation - only allow numbers
+    document.getElementById('spocContact').addEventListener('input', function(e) {
+      // Remove any non-numeric characters
+      this.value = this.value.replace(/[^0-9]/g, '');
+      
+      // Limit to 10 digits
+      if (this.value.length > 10) {
+        this.value = this.value.slice(0, 10);
+      }
+      
+      // Update validation message
+      const small = this.parentElement.nextElementSibling;
+      if (this.value.length === 10) {
+        small.textContent = 'Valid 10-digit mobile number';
+        small.style.color = '#28a745';
+      } else if (this.value.length > 0) {
+        small.textContent = `Enter 10-digit mobile number (${10 - this.value.length} more digits needed)`;
+        small.style.color = '#dc2626';
+      } else {
+        small.textContent = 'Enter 10-digit mobile number (numbers only)';
+        small.style.color = '#6c757d';
+      }
+    });
+    
+    // Email validation
+    document.getElementById('contactEmail').addEventListener('input', function(e) {
+      const email = this.value;
+      const small = this.nextElementSibling;
+      
+      // Check if email is valid
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+      
+      if (email === '') {
+        small.textContent = 'Please use a valid email address (Gmail preferred)';
+        small.style.color = '#6c757d';
+      } else if (emailPattern.test(email)) {
+        if (email.endsWith('@gmail.com')) {
+          small.textContent = 'Valid Gmail address ✓';
+          small.style.color = '#28a745';
+        } else {
+          small.textContent = 'Valid email address ✓';
+          small.style.color = '#28a745';
+        }
+      } else {
+        small.textContent = 'Please enter a valid email address (Gmail preferred)';
+        small.style.color = '#dc2626';
+      }
+    });
+    
+    // Handle form submission
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+      
+      const statusDiv = document.getElementById('statusMessage');
+      const submitBtn = event.target.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      
+      // Show loading state
+      statusDiv.className = 'status-message loading';
+      statusDiv.textContent = 'Submitting your problem statement...';
+      statusDiv.style.display = 'block';
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+      
+      try {
+        const formData = new FormData(event.target);
+        
+        // Validate mobile number
+        const mobileNumber = formData.get('spocContact');
+        if (!mobileNumber || !/^[0-9]{10}$/.test(mobileNumber)) {
+          throw new Error('Please enter a valid 10-digit mobile number (numbers only)');
+        }
+        
+        // Validate email
+        const email = formData.get('contactEmail');
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@(gmail\.com|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+        if (!email || !emailPattern.test(email)) {
+          throw new Error('Please enter a valid email address (Gmail preferred)');
+        }
+        
+        // Validate required fields
+        const requiredFields = ['orgName', 'spocName', 'spocContact', 'contactEmail', 'psTitle', 'psDescription'];
+        const missingFields = [];
+        
+        for (const field of requiredFields) {
+          if (!formData.get(field) || formData.get(field).toString().trim() === '') {
+            missingFields.push(field);
+          }
+        }
+        
+        // Check logo file
+        const logoFile = formData.get('logo');
+        if (!logoFile || logoFile.size === 0) {
+          missingFields.push('logo');
+        }
+        
+        // Check description length
+        const description = formData.get('psDescription');
+        if (description && description.length < 100) {
+          throw new Error('Problem statement description must be at least 100 characters long');
+        }
+        
+        if (missingFields.length > 0) {
+          throw new Error(`Please fill in all required fields: ${missingFields.join(', ')}`);
+        }
+        
+        // Submit form
+        const response = await fetch('upload-ps-fixed.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          statusDiv.className = 'status-message success';
+          statusDiv.innerHTML = `
+            <strong>✅ Success!</strong><br>
+            ${result.message}<br>
+            <small>Submission ID: ${result.submissionId}</small><br>
+            <small>You will be redirected to the home page in 5 seconds...</small>
+          `;
+          
+          // Reset form and redirect after successful submission
+          setTimeout(() => {
+            window.location.href = 'index1.html';
+          }, 5000);
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+        
+      } catch (error) {
+        console.error('Upload error:', error);
+        statusDiv.className = 'status-message error';
+        statusDiv.innerHTML = `
+          <strong>❌ Error:</strong><br>
+          ${error.message}
+        `;
+      } finally {
+        submitBtn.textContent = originalBtnText;
+        submitBtn.disabled = false;
+      }
+    });
+    
+    // Character counter for description
+    document.getElementById('psDescription').addEventListener('input', function() {
+      const current = this.value.length;
+      const min = 100;
+      const small = this.nextElementSibling;
+      
+      if (current < min) {
+        small.textContent = `${current}/${min} characters (minimum ${min - current} more required)`;
+        small.style.color = '#dc2626';
+      } else {
+        small.textContent = `${current} characters`;
+        small.style.color = '#28a745';
+      }
+    });
+  </script>
+</body>
+</html>
